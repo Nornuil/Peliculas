@@ -38,11 +38,16 @@ header {
     margin: 20px;
   }
 
-  .inputFiltrar {
-    margin: 20px;
-    width: 15%;
-    font-size: 1.5rem;
-    padding: 3px;
+  .input-contenedor{
+    color: white;
+    font-size: 2rem;
+
+    .inputFiltrar {
+      margin: 20px;
+      width: 15%;
+      font-size: 1.5rem;
+      padding: 3px;
+    }
   }
 }
 

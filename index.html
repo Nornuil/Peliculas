@@ -14,7 +14,15 @@
             Proyecto Final
         </h1>
         <hr>
-        <input type="text" id="palabraFiltrar" class="inputFiltrar">
+        <div class="input-contenedor">
+            <input type="text" id="palabraFiltrar" class="inputFiltrar" placeholder="Buscar...">
+            <label for="Estrenos">Estrenos</label>
+            <input type="checkbox" name="Estrenos" id="checkEstreno">
+            <label for="Populares">Populares</label>
+            <input type="checkbox" name="Populares" id="checkPopular">
+            <label for="Ranking">Top Ranking</label>
+            <input type="checkbox" name="Ranking" id="checkRanking">
+        </div>
     </header>
     <main id="main" class="main">
 
@@ -26,6 +34,8 @@
 
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/ajax.js"></script>
+    <script src="./js/function.js"></script>
     <script src="./js/index.js"></script>
 </body>
 </html>
