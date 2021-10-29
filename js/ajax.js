@@ -2,6 +2,7 @@ const peliculasEstreno = [];
 const peliculasPopulares = [];
 const peliculasTopRated = [];
 const imgBaseURL = "https://image.tmdb.org/t/p/original";
+sessionStorage.setItem("peliculas","cartelera");
 
 class Pelicula {
   constructor(id, titulo, imagenFondo, resumen, estreno) {
@@ -15,6 +16,7 @@ class Pelicula {
 ApiEstreno();
 ApiPopular();
 ApiTopRated();
+
 
 function ApiEstreno(){
 
@@ -93,4 +95,6 @@ function ApiTopRated(){
         renderizar(peliculasTopRated);    
     });
 }
+
+
 
