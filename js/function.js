@@ -3,8 +3,13 @@ let filtrar = document.getElementById("palabraFiltrar");
 let acumulador = "";
 let cartelera = [];
 
+
 function renderizar(peliculas) {
     cartelera = peliculasEstreno.concat(peliculasPopulares, peliculasTopRated);
+    
+    estrenoTopRated = peliculasEstreno.concat(peliculasTopRated);
+    popularTopRated = peliculasPopulares.concat(peliculasTopRated);
+        
   // cartelera.push(peliculas);
   for (const pelicula of peliculas) {
     acumulador += `
@@ -67,22 +72,6 @@ filtrar.addEventListener("keyup", function () {
         console.log("error switch");
         break;
     }
-
-//   if (sessionStorage.getItem("peliculas") == "cartelera") {
-//       let filtrado = cartelera.filter((pelicula) =>
-//         pelicula.titulo.toLowerCase().includes(this.value.toLowerCase())
-//       ); 
-//       acumulador = "";
-//   renderizar(filtrado);     
-//   }else{
-//     let filtrado = peliculasEstreno.filter((pelicula) =>
-//     pelicula.titulo.toLowerCase().includes(this.value.toLowerCase())
-//   );
-//   acumulador = "";
-//   renderizar(filtrado); 
-//   }
-  //   console.log(filtrado);
-  
 });
 
 
