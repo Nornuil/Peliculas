@@ -20,17 +20,22 @@ function renderizar(peliculas) {
                           <div class="card-body">
                               <h3 class="card-title">${pelicula.titulo}</h3>
                               <p class="card-text">${pelicula.resumen}</p>
-                              <p class="card-text">Estreno: ${
-                                pelicula.estreno
-                              }</p>
-                              <a href="#" class="btn btn-primary" >Comprar</a>
+                              <p class="card-text">Estreno: ${pelicula.estreno}</p>
+                              <a href="#" class="btn btn-primary" id="${pelicula.id}" name="btnComprar">Comprar</a>
                           </div>
                       </div>        
                       `;
   }
 
   contenedor.innerHTML = acumulador;
-//   cartelera = cartelera.concat(peliculas);
+  //   cartelera = cartelera.concat(peliculas);
+  const buttons = document.querySelectorAll('a.btn');
+  
+  // console.log(buttons);
+  
+  buttons.forEach(button => {
+      button.addEventListener('click', () => console.log(`Clicked! ${button.id}`));
+  });
 }
 
 filtrar.addEventListener("keyup", function () {
