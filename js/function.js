@@ -21,7 +21,7 @@ function renderizar(peliculas) {
                               <h3 class="card-title">${pelicula.titulo}</h3>
                               <p class="card-text">${pelicula.resumen}</p>
                               <p class="card-text">Estreno: ${pelicula.estreno}</p>
-                              <a href="#" class="btn btn-primary" id="${pelicula.id}" name="btnComprar">Comprar</a>
+                              <a href="#" class="btn btn-primary" id="${pelicula.id}" name="btnComprar">Guardar</a>
                           </div>
                       </div>        
                       `;
@@ -33,10 +33,16 @@ function renderizar(peliculas) {
   
   // console.log(buttons);
   
+  // buttons.forEach(button => {
+  //     button.addEventListener('click', () => console.log(`Clicked! ${button.id}`));
+  // });
+
   buttons.forEach(button => {
-      button.addEventListener('click', () => console.log(`Clicked! ${button.id}`));
-  });
+    button.addEventListener('click', () => favoritos(button.id));
+});
+  
 }
+
 
 filtrar.addEventListener("keyup", function () {
 //   cartelera = peliculasEstreno.concat(peliculasPopulares, peliculasTopRated);
@@ -78,5 +84,3 @@ filtrar.addEventListener("keyup", function () {
         break;
     }
 });
-
-

@@ -44,6 +44,38 @@ header {
     margin: 20px;
   }
 
+  .contenedor-carrito{
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+      img{
+        width: 100px;
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      .contenedor-cantidad{
+        position: absolute;
+        background-color: #fff;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        right: 25px;
+        display: none;
+        justify-content: center;
+        align-items: center;
+
+
+        .contenedor-favoritos{
+          color: #000;
+          margin: 0;
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
+      }
+  }
+
   .input-contenedor{
     color: white;
     font-size: 2rem;
