@@ -24,7 +24,7 @@ function guardarFavoritos(id) {
     favoritosID.push(id);
     contenedorCantidad.css({display: "flex"});
     cantidadFavoritos.textContent = favoritosID.length;
-    
+
   } else {
     alert("repetido");//MEJORAR
   }
@@ -32,6 +32,7 @@ function guardarFavoritos(id) {
 
 function renderizarFavoritos(peliculas) {
   contenedor.style.display = "none";
+  contenedor2.empty();
   contenedor2.css({ display: "flex" });
   for (const pelicula of peliculas) {
     contenedor2.append(`
