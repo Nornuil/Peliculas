@@ -38,6 +38,15 @@ html {
   font-size: 1rem;
   color: white;
 }
+@media (max-width: 768px) {
+  .body-index main .contenedor2 {
+    display: block;
+  }
+  .body-index main .contenedor2 .contenedorFavorito {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+}
 .body-index main .contenedor {
   flex-direction: row;
   justify-content: space-evenly;
