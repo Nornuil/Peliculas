@@ -8,7 +8,7 @@ const favoritosID = [];
 const peliculasFavoritas = [];
 
 
-btnFavoritos.click(function() {
+btnFavoritos.on("click",function() {
     for (const id of favoritosID) {        
         if ((peliculasFavoritas.find(pelicula => pelicula.id == id)) == null) {            
             peliculasFavoritas.push(cartelera.find(pelicula => pelicula.id == id));
