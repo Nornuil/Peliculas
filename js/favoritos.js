@@ -8,8 +8,8 @@ const favoritosID = [];
 const peliculasFavoritas = [];
 
 
-btnFavoritos.on("click", function() {
-
+btnFavoritos.click(function() {
+  e.preventDefault();
     for (const id of favoritosID) {        
         if ((peliculasFavoritas.find(pelicula => pelicula.id == id)) == null) {            
             peliculasFavoritas.push(cartelera.find(pelicula => pelicula.id == id));
