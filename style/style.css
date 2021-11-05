@@ -51,6 +51,14 @@ html {
 .body-index main .contenedor .card .card-body a {
   cursor: pointer;
 }
+@media (max-width: 768px) {
+  .body-index main .contenedor {
+    display: block;
+  }
+  .body-index main .contenedor .card {
+    width: 90%;
+  }
+}
 
 header .h1 {
   font-family: "Roboto", sans-serif;
@@ -96,6 +104,15 @@ header .input-contenedor .inputFiltrar {
   width: 15%;
   font-size: 1.5rem;
   padding: 3px;
+}
+@media (max-width: 768px) {
+  header {
+    display: block;
+  }
+  header .input-contenedor {
+    color: white;
+    font-size: 1.5rem;
+  }
 }
 
 h3 {

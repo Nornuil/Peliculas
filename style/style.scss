@@ -63,6 +63,14 @@ html {
            }
         }
       }
+
+      @media(max-width: 768px) {
+        display: block;
+        
+        .card{
+          width: 90%;
+        }
+      } 
     }
   }
 }
@@ -121,7 +129,17 @@ header {
       padding: 3px;
     }
   }
+
+  @media(max-width: 768px) {
+    display: block;
+    
+    .input-contenedor{
+      color: white;
+      font-size: 1.5rem;
+    } 
+  }
 }
+
 
 h3 {
   font-family: "Roboto", sans-serif;
