@@ -38,7 +38,7 @@ function renderizar(peliculas) {
   // });
 
   buttons.forEach(button => {
-    button.addEventListener('click', () => {guardarFavoritos(button.id); button.style.display = 'none'});
+    button.addEventListener('click', (e) => {e.preventDefault(); guardarFavoritos(button.id); button.style.display = 'none'});
 });
   
 }

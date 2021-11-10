@@ -23,7 +23,6 @@ function guardarFavoritos(id) {
     favoritosID.push(id);
     contenedorCantidad.css({display: "flex"});
     cantidadFavoritos.textContent = favoritosID.length;
-
   } else {
     alert("repetido");//MEJORAR
   }
