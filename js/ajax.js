@@ -90,4 +90,6 @@ function ApiTopRated() {
     // console.log(peliculas.length);
     renderizar(peliculasTopRated);
   });
+
 }
+

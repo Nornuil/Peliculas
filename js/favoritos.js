@@ -1,4 +1,5 @@
 const btnFavoritos = $('#favoritos');
+const inputContenedor= $('#input-contenedor');
 // const btnFavoritos = document.getElementById("favoritos");
 // const contenedorCantidad = document.getElementById("contenedor-cantidad");
 const contenedorCantidad = $("#contenedor-cantidad");
@@ -8,13 +9,12 @@ const favoritosID = [];
 const peliculasFavoritas = [];
 const contenedorInicial = $("#contenedor");
 const contenedorFavoritos = $("#contenedor2");
-
+let contador = 0;
 
 btnFavoritos.on("click",function() {
-  contenedorInicial.toggle(function() {
-    contenedorFavoritos.toggleClass("contendor2Flex");
-    
-  });
+  // fadeToggle();
+  fadeIntercalador();
+  
     for (const id of favoritosID) {        
         if ((peliculasFavoritas.find(pelicula => pelicula.id == id)) == null) {            
             peliculasFavoritas.push(cartelera.find(pelicula => pelicula.id == id));
@@ -46,5 +46,24 @@ function renderizarFavoritos(peliculas) {
                         <img src="${imgBaseURL + pelicula.imagenFondo}" class="posterFavorito" alt="poster">
                         <p class="reumenFavorito">${pelicula.resumen}</p>
                       </div>`);
+  }
+}
+
+function fadeIntercalador() {
+  if (contador == 0) {
+    contador = 1;
+    contenedorInicial.fadeToggle(function () {
+      inputContenedor.fadeToggle();
+      contenedorFavoritos.fadeToggle();
+      contenedorFavoritos.toggleClass("contenedor2Flex");
+    });
+  } else {
+    inputContenedor.fadeToggle();
+    contador = 0;
+    contenedorFavoritos.fadeToggle(function () {
+      // inputContenedor.fadeToggle();
+      contenedorInicial.fadeToggle();
+      contenedorFavoritos.toggleClass("contenedor2Flex");
+    });
   }
 }

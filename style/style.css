@@ -49,8 +49,8 @@ html {
     margin-bottom: 10px;
   }
 }
-.body-index main .contendor2Flex {
-  display: flex;
+.body-index main .contenedor2Flex {
+  display: flex !important;
 }
 .body-index main .contenedor {
   flex-direction: row;
@@ -85,7 +85,9 @@ header .h1 {
 header .contenedor-carrito {
   display: flex;
   justify-content: flex-end;
-  position: relative;
+  position: fixed;
+  right: 0px;
+  z-index: 1;
 }
 header .contenedor-carrito img {
   width: 100px;
@@ -112,6 +114,7 @@ header .contenedor-carrito .contenedor-cantidad .contenedor-favoritos {
 header .input-contenedor {
   color: white;
   font-size: 2rem;
+  margin-bottom: 40px;
 }
 header .input-contenedor .inputFiltrar {
   margin: 20px;

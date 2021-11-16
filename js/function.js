@@ -2,13 +2,49 @@ const contenedor = document.getElementById("contenedor");
 let filtrar = document.getElementById("palabraFiltrar");
 let acumulador = "";
 let cartelera = [];
+let arrayID = [];
+let carteleraFiltrada = [];
+let contadorCartelera = 0;
 
 
-function renderizar(peliculas) {
+function filtrarCartelera() {
+
+  for (const pelicula of cartelera) {
+    arrayID.push(pelicula.id);     
+  }
+  dataArr = new Set(arrayID);
+  let idFiltrado = [...dataArr];
+  // console.log(idFiltrado);
+  
+  for (const id of idFiltrado) {
+    carteleraFiltrada.push(cartelera.find(pelicula => pelicula.id == id));
+    }
+    // console.log(carteleraFiltrada);
+      
+}
+
+
+  function renderizar(peliculas) {
+    contadorCartelera += 1;
+    //filtrar por id para no repetir
     cartelera = peliculasEstreno.concat(peliculasPopulares, peliculasTopRated);
+    if (contadorCartelera == 3) {
+      filtrarCartelera();
+      
+    }
+  // console.log(cartelera);
+  
+  
+
+  // for (let i = 0; i < cartelera.length; i++) {
+  //   const element = cartelera[i].id;
+  //   console.log(cartelera.find(peliculaRepetida => peliculaRepetida.id == element));
     
-    estrenoTopRated = peliculasEstreno.concat(peliculasTopRated);
-    popularTopRated = peliculasPopulares.concat(peliculasTopRated);
+  // }
+ 
+
+  estrenoTopRated = peliculasEstreno.concat(peliculasTopRated);
+  popularTopRated = peliculasPopulares.concat(peliculasTopRated);
         
   // cartelera.push(peliculas);
   for (const pelicula of peliculas) {
@@ -44,6 +80,7 @@ function renderizar(peliculas) {
 }
 
 
+
 filtrar.addEventListener("keyup", function () {
 //   cartelera = peliculasEstreno.concat(peliculasPopulares, peliculasTopRated);
   //   console.log(this.value);
@@ -51,7 +88,7 @@ filtrar.addEventListener("keyup", function () {
   let filtrado;
     switch (sessionStorage.getItem("peliculas")) {
       case "cartelera":
-        filtrado = cartelera.filter((pelicula) =>
+        filtrado = carteleraFiltrada.filter((pelicula) =>
           pelicula.titulo.toLowerCase().includes(this.value.toLowerCase())
         );
         acumulador = "";
