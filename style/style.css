@@ -22,6 +22,8 @@ html {
 .body-index main .contenedor2 .contenedorFavorito {
   background: #2c2c2c;
   width: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 .body-index main .contenedor2 .contenedorFavorito .posterFavorito {
   width: 100%;
@@ -46,6 +48,9 @@ html {
     width: 90%;
     margin-bottom: 10px;
   }
+}
+.body-index main .contendor2Flex {
+  display: flex;
 }
 .body-index main .contenedor {
   flex-direction: row;

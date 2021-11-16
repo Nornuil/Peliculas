@@ -6,9 +6,15 @@ const cantidadFavoritos = document.getElementById("cantidad-favoritos");
 const contenedor2 = $("#contenedor2");
 const favoritosID = [];
 const peliculasFavoritas = [];
+const contenedorInicial = $("#contenedor");
+const contenedorFavoritos = $("#contenedor2");
 
 
 btnFavoritos.on("click",function() {
+  contenedorInicial.toggle(function() {
+    contenedorFavoritos.toggleClass("contendor2Flex");
+    
+  });
     for (const id of favoritosID) {        
         if ((peliculasFavoritas.find(pelicula => pelicula.id == id)) == null) {            
             peliculasFavoritas.push(cartelera.find(pelicula => pelicula.id == id));
@@ -29,9 +35,10 @@ function guardarFavoritos(id) {
 }
 
 function renderizarFavoritos(peliculas) {
-  contenedor.style.display = "none";
+  localStorage.setItem("favoritos", JSON.stringify(peliculas));
+  // contenedor.style.display = "none";
   contenedor2.empty();
-  contenedor2.css({ display: "flex" });
+  // contenedor2.css({ display: "flex" });
   for (const pelicula of peliculas) {
     contenedor2.append(`
                       <div class="contenedorFavorito">
