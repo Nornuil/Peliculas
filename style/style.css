@@ -51,6 +51,7 @@ html {
 }
 .body-index main .contenedor2Flex {
   display: flex !important;
+  margin-top: 130px;
 }
 .body-index main .contenedor {
   flex-direction: row;
