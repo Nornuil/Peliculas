@@ -32,16 +32,6 @@ function filtrarCartelera() {
       filtrarCartelera();
       
     }
-  // console.log(cartelera);
-  
-  
-
-  // for (let i = 0; i < cartelera.length; i++) {
-  //   const element = cartelera[i].id;
-  //   console.log(cartelera.find(peliculaRepetida => peliculaRepetida.id == element));
-    
-  // }
- 
 
   estrenoTopRated = peliculasEstreno.concat(peliculasTopRated);
   popularTopRated = peliculasPopulares.concat(peliculasTopRated);
@@ -77,6 +67,7 @@ function filtrarCartelera() {
     button.addEventListener('click', (e) => {e.preventDefault(); guardarFavoritos(button.id); button.style.display = 'none'});
 });
   
+
 }
 
 

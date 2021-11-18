@@ -1,7 +1,5 @@
 const btnFavoritos = $('#favoritos');
 const inputContenedor= $('#input-contenedor');
-// const btnFavoritos = document.getElementById("favoritos");
-// const contenedorCantidad = document.getElementById("contenedor-cantidad");
 const contenedorCantidad = $("#contenedor-cantidad");
 const cantidadFavoritos = document.getElementById("cantidad-favoritos");
 const contenedor2 = $("#contenedor2");
@@ -10,17 +8,19 @@ const peliculasFavoritas = [];
 const contenedorInicial = $("#contenedor");
 const contenedorFavoritos = $("#contenedor2");
 let contador = 0;
+let arrayPushFavoritos = [];
+let favoritosIDArray = JSON.parse(localStorage.getItem('favoritosID'));
 
 btnFavoritos.on("click",function() {
   // fadeToggle();
   fadeIntercalador();
-  
-    for (const id of favoritosID) {        
+  let listaID = JSON.parse(localStorage.getItem('favoritosID'))
+    for (const id of listaID) {        
         if ((peliculasFavoritas.find(pelicula => pelicula.id == id)) == null) {            
             peliculasFavoritas.push(cartelera.find(pelicula => pelicula.id == id));
         }
     }
-    console.log(peliculasFavoritas);
+    // console.log(peliculasFavoritas);
     renderizarFavoritos(peliculasFavoritas);
 });
 
@@ -29,13 +29,17 @@ function guardarFavoritos(id) {
     favoritosID.push(id);
     contenedorCantidad.css({display: "flex"});
     cantidadFavoritos.textContent = favoritosID.length;
+
+    // arrayPushFavoritos.push(favoritosID);
+    // arrayPushFavoritos.push(cartelera.find(pelicula => pelicula.id == id))
+    localStorage.setItem('favoritosID', JSON.stringify(favoritosID));
   } else {
     alert("repetido");//MEJORAR
   }
 }
 
 function renderizarFavoritos(peliculas) {
-  localStorage.setItem("favoritos", JSON.stringify(peliculas));
+  // localStorage.setItem("favoritos", JSON.stringify(peliculas));
   // contenedor.style.display = "none";
   contenedor2.empty();
   // contenedor2.css({ display: "flex" });
