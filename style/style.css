@@ -19,26 +19,9 @@ html {
   align-items: center;
   flex-wrap: wrap;
 }
-.body-index main .contenedor2 .contenedorFavorito {
-  background: #2c2c2c;
-  width: 30%;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.body-index main .contenedor2 .contenedorFavorito .posterFavorito {
-  width: 100%;
-}
-.body-index main .contenedor2 .contenedorFavorito .tituloFavorito {
-  padding: 8px;
-  text-align: center;
-  font-size: 1.5rem;
-  color: white;
-}
-.body-index main .contenedor2 .contenedorFavorito .reumenFavorito {
-  display: none;
-  text-align: center;
-  font-size: 1rem;
-  color: white;
+.body-index main .contenedor2 .card .card-body .btnQuitar {
+  display: block !important;
+  width: 20%;
 }
 @media (max-width: 768px) {
   .body-index main .contenedor2 {
@@ -49,28 +32,44 @@ html {
     margin-bottom: 10px;
   }
 }
+.body-index main .contenedor2 .card {
+  margin: 10px;
+  width: 40%;
+}
+.body-index main .contenedor2 .card .card-body a {
+  cursor: pointer;
+}
+.body-index main .contenedor2 .card .card-body .card-text {
+  display: none;
+}
+.body-index main .contenedor2 .card .card-body .btnQuitar {
+  display: block;
+}
 .body-index main .contenedor2Flex {
   display: flex !important;
   margin-top: 130px;
 }
-.body-index main .contenedor {
+.body-index main .contenedorCategorias {
   flex-direction: row;
   justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
 }
-.body-index main .contenedor .card {
+.body-index main .contenedorCategorias .card {
   margin: 10px;
   width: 40%;
 }
-.body-index main .contenedor .card .card-body a {
+.body-index main .contenedorCategorias .card .card-body a {
   cursor: pointer;
 }
+.body-index main .contenedorCategorias .card .card-body .btnQuitar {
+  display: none;
+}
 @media (max-width: 768px) {
-  .body-index main .contenedor {
+  .body-index main .contenedorCategorias {
     display: block;
   }
-  .body-index main .contenedor .card {
+  .body-index main .contenedorCategorias .card {
     width: 90%;
   }
 }
@@ -102,7 +101,7 @@ header .contenedor-carrito .contenedor-cantidad {
   height: 25px;
   border-radius: 50%;
   right: 25px;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
 }

@@ -1,25 +1,14 @@
+const URLestreno = "https://api.themoviedb.org/3/movie/upcoming?api_key=64f3df03e7560e9c130ff04d853af342";
+const URLpopular ="https://api.themoviedb.org/3/movie/popular?api_key=64f3df03e7560e9c130ff04d853af342&language=en-US&page=1";
+const URLtopRated = "https://api.themoviedb.org/3/movie/top_rated?api_key=64f3df03e7560e9c130ff04d853af342&language=en-US&page=1";
 const peliculasEstreno = [];
 const peliculasPopulares = [];
 const peliculasTopRated = [];
-const imgBaseURL = "https://image.tmdb.org/t/p/original";
-sessionStorage.setItem("peliculas", "cartelera");
 
-class Pelicula {
-  constructor(id, titulo, imagenFondo, resumen, estreno) {
-    this.id = parseInt(id);
-    this.titulo = titulo;
-    this.imagenFondo = imagenFondo;
-    this.resumen = resumen;
-    this.estreno = estreno;
-  }
-}
-ApiEstreno();
-ApiPopular();
-ApiTopRated();
 
 function ApiEstreno() {
   let settings = {
-    url: "https://api.themoviedb.org/3/movie/upcoming?api_key=64f3df03e7560e9c130ff04d853af342",
+    url: URLestreno,
     method: "GET",
     timeout: 0,
   };
@@ -35,16 +24,14 @@ function ApiEstreno() {
           response.results[i].release_date
         )
       );
-      // console.log(response.results[i].title);
     }
-    // console.log(peliculas.length);
-    renderizar(peliculasEstreno);
+    renderizarPeliculas(peliculasEstreno,contenedorEstreno);
   });
 }
 
 function ApiPopular() {
   let settings = {
-    url: "https://api.themoviedb.org/3/movie/popular?api_key=64f3df03e7560e9c130ff04d853af342&language=en-US&page=1",
+    url: URLpopular,
     method: "GET",
     timeout: 0,
   };
@@ -60,16 +47,14 @@ function ApiPopular() {
           response.results[i].release_date
         )
       );
-      //   console.log(response.results[i].title);
     }
-    // console.log(peliculas.length);
-    renderizar(peliculasPopulares);
+    renderizarPeliculas(peliculasPopulares,contenedorPopular);
   });
 }
 
 function ApiTopRated() {
   let settings = {
-    url: "https://api.themoviedb.org/3/movie/top_rated?api_key=64f3df03e7560e9c130ff04d853af342&language=en-US&page=1",
+    url: URLtopRated,
     method: "GET",
     timeout: 0,
   };
@@ -85,11 +70,7 @@ function ApiTopRated() {
           response.results[i].release_date
         )
       );
-      //   console.log(response.results[i].title);
     }
-    // console.log(peliculas.length);
-    renderizar(peliculasTopRated);
+    renderizarPeliculas(peliculasTopRated,contenedorTopRated); 
   });
-
 }
-

@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyecto Final</title>
-    <link rel="stylesheet" href="./style/bootstrap.min.css">   
+    <link rel="stylesheet" href="./style/bootstrap.min.css">
     <link rel="stylesheet" href="./style/style.css">
 </head>
+
 <body class="body-index">
     <header>
         <h1 class="h1">
             Proyecto Final
         </h1>
-        
         <div class="contenedor-carrito">
             <div id="contenedor-cantidad" class="contenedor-cantidad">
                 <p id="cantidad-favoritos" class="contenedor-favoritos"></p>
@@ -35,21 +36,21 @@
     </header>
     <main id="main" class="main">
         <div class="contenedor2" id="contenedor2"></div>
-        <div id="contenedor" class="contenedor"></div>
+        <div id="contenedor" class="contenedor">
+            <div id="contenedorCartelera" class="contenedorCategorias"></div>
+            <div id="contenedorEstreno" class="contenedorCategorias"></div>
+            <div id="contenedorPopular" class="contenedorCategorias"></div>
+            <div id="contenedorTopRated" class="contenedorCategorias"></div>
+        </div>
     </main>
-    <footer>
-
-    </footer>
-
     <script src="./js/jquery.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script src="./js/ajax.js"></script>
-    <script src="./js/function.js"></script>
-    <script src="./js/index.js"></script>
-    <script src="./js/favoritos.js"></script>
+    <script src="./js/Modelo/ajax.js"></script>
+    <script src="./js/Modelo/peliculasModel.js"></script>
+    <script src="./js/Controlador/peliculasClass.js"></script>
+    <script src="./js/Vista/renderizar.js"></script>
+    <script src="./js/Controlador/storage.js"></script>
+    <script src="./js/Vista/funciones.js"></script>
 </body>
-</html>
 
-<div>
-    
-</div>
+</html>

@@ -15,36 +15,21 @@ html {
   main {
 
     .contenedor2{
+      
       display: none;
       justify-content: space-evenly;
       align-items: center;
       flex-wrap: wrap;
       
-      .contenedorFavorito{
-        background: #2c2c2c;
-        width: 30%;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        // margin: 10px 10px 0 10px;
-        // margin: 10px;
+      .card{
 
-        .posterFavorito{
-          width:100%;
+        .card-body{
+
+          .btnQuitar{
+            display: block !important;
+            width: 20%;
+          }
         }
-
-        .tituloFavorito{
-          padding: 8px;
-          text-align: center;
-          font-size: 1.5rem;
-          color: white;
-        }
-
-        .reumenFavorito{
-          display: none;
-          text-align: center;
-          font-size: 1rem;
-          color: white;
-        }        
       }
 
       @media(max-width: 768px) {
@@ -54,16 +39,36 @@ html {
           width: 90%;
           margin-bottom: 10px;
         }
-      } 
+      }
+      
+      .card {
+        margin: 10px;
+        width: 40%;
+
+        .card-body {
+           a{
+             cursor: pointer;
+           }
+           .card-text {
+             display: none;
+           }
+
+           .btnQuitar{
+             display:block;
+           }
+        }
+      }
     }
 
     .contenedor2Flex{
       display: flex !important;
       margin-top: 130px;
+
+      
     }
   
 
-    .contenedor {
+    .contenedorCategorias {
       flex-direction: row;
       justify-content: space-evenly;
       display: flex;
@@ -76,6 +81,9 @@ html {
         .card-body {
            a{
              cursor: pointer;
+           }
+           .btnQuitar{
+             display: none;
            }
         }
       }
@@ -122,7 +130,7 @@ header {
         height: 25px;
         border-radius: 50%;
         right: 25px;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
 
